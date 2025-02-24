@@ -11,8 +11,8 @@ class TasksModel extends FlutterFlowModel<TasksWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (Quote)] action in Text widget.
-  ApiCallResponse? apiResultwm6;
+  // Stores action output result for [Backend Call - API (Quote)] action in tasks widget.
+  ApiCallResponse? apiResult4le;
 
   @override
   void initState(BuildContext context) {}

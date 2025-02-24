@@ -12,11 +12,9 @@ class QuoteCall {
   static Future<ApiCallResponse> call({
     dynamic qJson,
     dynamic aJson,
-    dynamic hJson,
   }) async {
     final q = _serializeJson(qJson);
     final a = _serializeJson(aJson);
-    final h = _serializeJson(hJson);
 
     return ApiManager.instance.makeApiCall(
       callName: 'Quote',
@@ -32,6 +30,15 @@ class QuoteCall {
       alwaysAllowBody: false,
     );
   }
+
+  static String? quote(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].q''',
+      ));
+  static String? author(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].a''',
+      ));
 }
 
 class ApiPagingParams {
